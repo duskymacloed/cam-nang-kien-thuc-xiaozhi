@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cẩm nang Xiaozhi AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    
+    <style type="text/css">@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:800;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:800;src:url(/cf-fonts/v/nunito/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:800;src:url(/cf-fonts/v/nunito/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:800;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:800;src:url(/cf-fonts/v/nunito/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}</style>
+
+    
+    <style>
+        /* --- CÀI ĐẶT CHUNG --- */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --orange-color: #f5ab35; /* FIX 2: Thêm màu cam */
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --white-color: #ffffff;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition-speed: 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 0.75em;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        h3 { font-size: 1.5rem; color: var(--orange-color); } /* FIX 2: Đổi h3 sang màu cam */
+        h4 { font-size: 1.2rem; }
+
+        p { margin-bottom: 1em; }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul { list-style-position: inside; }
+
+        /* --- MODAL (THÔNG BÁO & SƠ ĐỒ) --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+            animation: slideIn 0.4s ease-out;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            transition: color var(--transition-speed);
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        #notification-modal .modal-content {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        /* --- HEADER & THANH TÌM KIẾM --- */
+        header {
+            background: var(--white-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary-color), #00aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 5px rgba(0, 123, 255, 0.1);
+        }
+
+        #search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #search-bar {
+            width: 100%;
+            padding: 15px 20px 15px 45px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        
+        #search-bar:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(0,123,255,0.3);
+        }
+
+        #search-container i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        #search-results {
+            position: absolute;
+            width: 100%;
+            background: var(--white-color);
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 500;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        #search-results li {
+            list-style: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color var(--transition-speed);
+        }
+
+        #search-results li:hover {
+            background-color: #f1f1f1;
+        }
+        
+        #search-results li:not(:last-child) {
+            border-bottom: 1px solid #eee;
+        }
+
+        /* --- HỆ THỐNG TAB --- */
+        nav.tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: var(--white-color);
+            border-radius: 50px;
+            box-shadow: var(--box-shadow);
+            padding: 8px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            flex: 1 1 auto;
+            padding: 12px 20px;
+            margin: 0 5px;
+            border: none;
+            background: transparent;
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+            white-space: nowrap;
+        }
+        
+        .tab-btn i {
+            margin-right: 8px;
+        }
+
+        .tab-btn:hover {
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            box-shadow: 0 4px 10px rgba(0,123,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* --- NỘI DUNG TAB --- */
+        .tab-pane {
+            display: none;
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes highlight {
+            0% { background-color: transparent; }
+            50% { background-color: #fff3cd; }
+            100% { background-color: transparent; }
+        }
+        .highlight-animation {
+            animation: highlight 2s ease-out;
+        }
+
+        /* --- TAB: TRANG CHỦ --- */
+        .home-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .home-card {
+            background: var(--light-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            cursor: pointer;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            border: 1px solid #e9ecef;
+        }
+        
+        .home-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        
+        .home-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .home-card h3 {
+            color: var(--dark-color); /* Giữ h3 trong card là màu tối */
+            font-size: 1.25rem;
+        }
+
+        /* --- TAB: GIỚI THIỆU --- */
+        .intro-box {
+            background: #fdf6e3;
+            border-left: 5px solid var(--orange-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .intro-box strong {
+            color: #c0392b;
+        }
+
+        /* FIX 2: Làm đẹp tab Giới thiệu */
+        #tab-gioi-thieu h3 {
+             border-bottom: 2px solid var(--orange-color);
+             padding-bottom: 5px;
+             margin-top: 25px;
+        }
+
+        #tab-gioi-thieu h4 {
+            background: var(--light-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--orange-color);
+            margin-top: 20px;
+            color: var(--dark-color);
+        }
+
+
+        /* --- TAB: PHÂN LOẠI (FIX 3) --- */
+        .category-list {
+            padding-left: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Thu nhỏ card một chút */
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .category-list li {
+            background: var(--white-color);
+            padding: 15px;
+            margin-bottom: 0;
+            border-radius: var(--border-radius);
+            border: 1px solid #e9ecef;
+            transition: all var(--transition-speed);
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            /* FIX 3: Dùng flex column để chứa ảnh và text */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .category-list li:hover {
+            transform: translateY(-5px);
+            background: var(--white-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 6px 15px rgba(0,123,255,0.15);
+        }
+        
+        /* FIX 3: Style cho ảnh placeholder */
+        .category-list li img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #f0f0f0; /* Màu nền cho ảnh */
+        }
+        
+        .category-list li span {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--dark-color);
+        }
+
+
+        /* --- TAB: CÁCH DIY --- */
+        .diy-project {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .diy-project:last-child {
+            border-bottom: none;
+        }
+        
+        .option-toggle {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all var(--transition-speed);
+            position: relative;
+        }
+        
+        .option-toggle::after {
+            content: '\f078'; /* Font Awesome chevron-down */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform var(--transition-speed);
+        }
+        
+        .option-toggle.active::after {
+            transform: translateY(-50%) rotate(-180deg);
+        }
+
+        .option-toggle:hover {
+            background: #f1f1f1;
+        }
+        
+        .option-toggle.active {
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-color: var(--primary-color);
+        }
+        
+        .option-content, .schematic-image {
+            display: none;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            animation: fadeIn 0.4s;
+            margin-bottom: 15px;
+        }
+        
+        .option-content.active, .schematic-image.active {
+            display: block;
+        }
+        
+        .schematic-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .shopee-preview {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            margin-right: 8px;
+            vertical-align: middle;
+            border: 1px solid #eee;
+            background: var(--white-color); /* Thêm nền trắng cho ảnh preview */
+        }
+        
+        .component-list li {
+            list-style: none;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .component-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .youtube-embed {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: 20px 0;
+        }
+        
+        .youtube-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .step-heading {
+            background: var(--light-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: var(--dark-color);
+        }
+
+        /* --- TAB: SẢN PHẨM SẴN (FIX 4) --- */
+        .shop-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Thu nhỏ card một chút */
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .shop-list li {
+            background: var(--white-color);
+            padding: 15px;
+            margin-bottom: 0;
+            border-radius: var(--border-radius);
+            border: 1px solid #e9ecef;
+            transition: all var(--transition-speed);
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .shop-list li:hover {
+            transform: translateY(-5px);
+            background: var(--white-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 6px 15px rgba(0,123,255,0.15);
+        }
+        
+        /* Style cho ảnh placeholder */
+        .shop-list li img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #f0f0f0; /* Màu nền cho ảnh */
+        }
+        
+        .shop-list li span {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+
+        /* --- TAB: FW & SƠ ĐỒ --- */
+        .fw-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .fw-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .fw-item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-right: 20px;
+        }
+        
+        .fw-item-buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .schematic-item {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .schematic-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* --- TAB: NÂNG CAO --- */
+        .advanced-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .advanced-list li {
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            background: var(--light-color);
+        }
+        .advanced-list li i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--dark-color);
+            color: var(--light-color);
+            margin-top: 30px;
+        }
+        
+        footer p {
+            margin-bottom: 15px;
+        }
+        
+        .social-links a {
+            color: var(--white-color);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color var(--transition-speed);
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            nav.tabs {
+                flex-direction: column;
+                border-radius: var(--border-radius);
+            }
+            .tab-btn {
+                flex: 1 1 100%;
+                margin: 5px 0;
+            }
+            .tab-btn.active {
+                border-radius: 50px;
+            }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            .container { padding: 10px; }
+            .tab-pane, header { padding: 20px; }
+            .fw-item { flex-direction: column; align-items: flex-start; }
+            .fw-item-buttons { margin-top: 15px; }
+        }
+
+        /* --- NÚT HOME NỔI --- */
+        .floating-home-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            transition: all var(--transition-speed);
+            z-index: 999;
+        }
+
+        .floating-home-btn:hover {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+
+        .floating-home-btn i {
+            font-size: 1.8rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="close-notification">&times;</span>
+            <h3><i class="fa-solid fa-bell" style="color: #f5ab35;"></i> Thông Báo</h3>
+            <p>Chào mừng bạn đến với Cẩm nang Xiaozhi AI!</p>
+            <p>Tham gia cộng đồng để trao đổi và nhận hỗ trợ:</p>
+            <a href="https://www.facebook.com/share/g/1a57kDmeop/" target="_blank" class="btn">
+                <i class="fa-brands fa-facebook"></i> Tham gia nhóm
+            </a>
+            <a href="https://www.facebook.com/nhandusky/" target="_blank" class="btn btn-secondary">
+                <i class="fa-solid fa-message"></i> Liên hệ nếu có thắc mắc
+            </a>
+        </div>
+    </div>
+
+    <div id="schematic-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="close-schematic">&times;</span>
+            <h3 id="schematic-modal-title">Sơ đồ mạch</h3>
+            <div id="schematic-modal-body">
+                </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-robot"></i> Cẩm nang Xiaozhi AI</h1>
+            <div id="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-bar" placeholder="Tìm kiếm nhanh (ví dụ: 'cách diy', 'otto', 'tandev'...)">
+                <ul id="search-results"></ul>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-target="tab-trang-chu"><i class="fa-solid fa-house"></i> Trang chủ</button>
+            <button class="tab-btn" data-target="tab-gioi-thieu"><i class="fa-solid fa-circle-info"></i> Giới thiệu</button>
+            <button class="tab-btn" data-target="tab-phan-loai"><i class="fa-solid fa-sitemap"></i> Phân loại</button>
+            <button class="tab-btn" data-target="tab-cach-diy"><i class="fa-solid fa-screwdriver-wrench"></i> Cách DIY</button>
+            <button class="tab-btn" data-target="tab-san-pham-san"><i class="fa-solid fa-box-open"></i> Sản phẩm sẵn</button>
+            <button class="tab-btn" data-target="tab-fw-so-do"><i class="fa-solid fa-microchip"></i> FW & Sơ đồ</button>
+            <button class="tab-btn" data-target="tab-nang-cao"><i class="fa-solid fa-graduation-cap"></i> Nâng cao</button>
+        </nav>
+
+        <main>
+            <section id="tab-trang-chu" class="tab-pane active">
+                <h2><i class="fa-solid fa-hand-sparkles"></i> Chào mừng bạn đến với blog tổng hợp kiến thức về Xiaozhi!</h2>
+                <p>Nơi đây cung cấp hướng dẫn từ cơ bản đến nâng cao, giúp bạn tự tay (DIY) hoặc lựa chọn sản phẩm phù hợp, kèm với những tài nguyên cho bạn muốn khám phá.</p>
+                <p>Nếu bạn muốn DIY thì nhấp vào phân loại mình cần nhé. Hãy chọn một mục bên dưới để bắt đầu:</p>
+                
+                <div class="home-grid">
+                    <div class="home-card" data-target="tab-gioi-thieu">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <h3>Giới thiệu</h3>
+                        <p>Xiaozhi là gì? Bắt đầu từ đâu?</p>
+                    </div>
+                    <div class="home-card" data-target="tab-phan-loai">
+                        <i class="fa-solid fa-sitemap"></i>
+                        <h3>Phân loại</h3>
+                        <p>Xem các loại Chatbot và Robot AI.</p>
+                    </div>
+                    <div class="home-card" data-target="tab-cach-diy">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <h3>Cách DIY</h3>
+                        <p>Hướng dẫn tự làm từng bước.</p>
+                    </div>
+                    <div class="home-card" data-target="tab-san-pham-san">
+                        <i class="fa-solid fa-box-open"></i>
+                        <h3>Sản phẩm sẵn</h3>
+                        <p>Link mua sản phẩm hoàn thiện.</p>
+                    </div>
+                    <div class="home-card" data-target="tab-fw-so-do">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h3>FW & Sơ đồ</h3>
+                        <p>Tổng hợp firmware và sơ đồ mạch.</p>
+                    </div>
+                    <div class="home-card" data-target="tab-nang-cao">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h3>Nâng cao</h3>
+                        <p>Khám phá kiến thức chuyên sâu.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tab-gioi-thieu" class="tab-pane">
+                <h2><i class="fa-solid fa-circle-info"></i> I. Giới thiệu Xiaozhi là gì?</h2>
+                <p>Xiaozhi (hay còn được biết đến với các biến thể như "chatbot AI", "robot AI") là một dự án AI mã nguồn mở, thường dựa trên các nền tảng phần cứng như ESP32.</p>
+                <p>Điểm đặc biệt của Xiaozhi là khả năng tương tác bằng giọng nói (tiếng Việt) và các ngôn ngữ khác trên thế giới, kết nối với các mô hình AI lớn (LLMs) để trả lời câu hỏi, trò chuyện, và thực hiện một số tác vụ cơ bản.</p>
+
+                <h3><i class="fa-solid fa-flag"></i> Nguồn gốc và Nhà phát triển Việt Nam</h3>
+                <p>Dự án Xiaozhi bắt nguồn từ cộng đồng maker Trung Quốc và nhanh chóng du nhập vào Việt Nam. Tại Việt Nam, nhiều nhà phát triển (developer) đã tùy biến, cải tiến và xây dựng các hệ thống server riêng để tối ưu hóa cho người dùng Việt.</p>
+                <p>Trong đó “Trần Ngọc Tân(tandev)” admin cộng đồng XiaozhiVN đóng góp rất nhiều vào việc phát triển firmware, chia sẻ sơ đồ và cách lắp ráp cho ae VN, ngoài ra còn một số nhà phát triển khác như Xiaozhi sever vn, Mr.Vọc Sĩ, VI3D,...</p>
+
+                <h3><i class="fa-solid fa-person-chalkboard"></i> Lời khuyên cho Newbie</h3>
+                <p>Nếu bạn là người mới, việc bắt đầu có thể hơi choáng ngợp. Dưới đây là hai hướng đi chính:</p>
+                <ul>
+                    <li><strong>Mua sản phẩm hoàn thiện:</strong> Đây là cách nhanh nhất để trải nghiệm. Bạn sẽ có một sản phẩm đã được lắp ráp và cài đặt sẵn, chỉ việc dùng. Cách này phù hợp nếu bạn không rành về điện tử hoặc không có thời gian, đồng thời cũng có thể tự vọc vạch, up fw riêng nếu muốn.</li>
+                    <li><strong>Tự làm (DIY):</strong> Đây là hành trình thú vị, giúp bạn học hỏi về điện tử, lập trình và AI. Bạn sẽ phải tự mua linh kiện, hàn mạch và nạp firmware. Mặc dù tốn thời gian hơn, nhưng thành quả "đứa con tinh thần" tự mình làm ra sẽ rất xứng đáng.</li>
+                </ul>
+                <p>À ae nên tham khảo làm theo fw của tandev nha, nhanh-gọn-lẹ :D</p>
+                
+                <div class="intro-box">
+                    <p><strong>Lời khuyên chân thành:</strong> Hãy <strong>mua sản phẩm hoàn thiện</strong> để trải nghiệm trước. Nếu bạn có kinh nghiệm hàn, và thực sự đam mê thì hãy bắt đầu hành trình "tự làm" sau khi đã hiểu rõ cách thức hoạt động của nó.</p>
+                </div>
+                
+                <h4><i class="fa-solid fa-comment-dots"></i> Chatbot AI</h4>
+                <p>Là thiết bị đơn giản nhất, chỉ cần một vài linh kiện như esp32, loa, mic, mạch khuếch đại, nút nhấn (nhét vào vỏ nếu có) thì đã hoàn thành. Qua đó bạn sẽ có thể trò chuyện với thiết bị này một cách tự nhiên hoặc gán một vai trò cho nó như giáo viên tiếng anh, một người bạn chẳng hạn.</p>
+                
+                <h4><i class="fa-solid fa-robot"></i> Robot AI</h4>
+                <p>Là thiết bị phức tạp hơn, cần servo hoặc động cơ cùng với những module tùy chỉnh khác (nếu có), vì thế nó sẽ khó hơn ở các giai đoạn như hàn, lắp, nạp fw. Qua đó bạn có thể trò chuyện tương tự chatbot đồng thời điều khiển nó di chuyển theo yêu cầu và thực một số chức năng chuyên sâu khác nếu có module kèm theo.</p>
+            </section>
+
+            <section id="tab-phan-loai" class="tab-pane">
+                <h2><i class="fa-solid fa-sitemap"></i> II. Phân loại</h2>
+                <p>Nhấp vào một loại để xem hướng dẫn DIY tương ứng.</p>
+                
+                <h3>A. Chatbot AI</h3>
+                <ul class="category-list">
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-1">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczPQnB2ZDijvIOuvAqYAdaAXEMJDTXajW08YENekCzOj1QRM2mRwdt21A8BCJFl-Dw9m_CeNmXoUXURso0d7OQXvIvT2lOG-McjWk78LohOOk9gvMY23bkbDTEjvZ21wx1yviCko8KTZHCrcGXIy0Znq=w1917-h900-s-no-gm?authuser=0" alt="Xiaozhi tandev">
+                        <span>1. Xiaozhi tandev</span>
+                    </li>
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-2">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczNWR_LPABFSZf1vVwu-wzjB0HpO6MuKP73MSODX6zeqYKgoCJw9SG4uxvDf9qrmDKYEhU1vDgXu38b_lSjFqeoUKJ5EikVJO4dxpVAXXPQtEgBLiAS1uEdovlPaPImyz70rqG-oP3LzEUxKvfqhdW8i=w700-h400-s-no-gm?authuser=0" alt="Combo DIY mạch tím huyền thoại">
+                        <span>2. Combo DIY mạch tím huyền thoại</span>
+                    </li>
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-3">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczNenfwnqufh4bJDsH2GrhClFknfg0hRKEPBBfbnzf_907_tIEdZop7SHIKoKS3K6H4hkwIDrdO8S4utWoWevEIIy86xYo0Tiwj6dHZGBsvsgZ3pdKEoqs92uVYxBMkMBPhKzjlnDai7Wi9RwDDN76U9=w720-h720-s-no-gm?authuser=0" alt="Xiaozhi box màn màu">
+                        <span>3. Xiaozhi box màn màu</span>
+                    </li>
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-4">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMU3NQeMhvfDnV_iYZLSKx4TpJ80dSNMRJMbN304OV3JhSRUIkf9IVoQpcjD8LdY1cQGxidGIBuctDj7wJmhrjubAhISG4stpU2E5rH3IjJTs2_VsMkh_iZ221Nu2cWo_qazkBtK6x5eVnAecqLRJEJ=w709-h945-s-no-gm?authuser=0" alt="Xiaozhi kết hợp Dasai Mochi">
+                        <span>4. Xiaozhi kết hợp Dasai Mochi</span>
+                    </li>
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-5">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczNaj2j3S50tFIsbQ8VFSx0tfYvZ2O-qTWE1Ss1-BFgJa-V0lGXs_1c0sAvE8IPYF-PAgTnOO-8J1y8BB7Dya3NyjdgbdL6DYz1n9eTMFcxhjN0uwfJ28cSqGOUXqDQDgoaHpJx3-maaIQel7FjmlO7m=w676-h676-s-no-gm?authuser=0" alt="Xiaozhi cắm loa ngoài">
+                        <span>5. Xiaozhi cắm loa ngoài (Basic-Ko màn)</span>
+                    </li>
+                </ul>
+                
+                <h3>B. Robot AI</h3>
+                <ul class="category-list">
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-6">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczNu0A6HNw9El5Idhgxf87Ky5Zaf0-0qRaubSwEdsJq57YavSnzWpnbkaJ1iAUa-yfXSOnPKPa5p9zcTf5R0mKlyQa1FN6DXRuiVY1xWWkL2AxJ8a7NaGkAsiu6GgJ66zEHaz70J3j-uxS6AxWQO9Qmn=w686-h386-s-no-gm?authuser=0" alt="OTTO AI 4 servo">
+                        <span>1. OTTO AI 4 servo</span>
+                    </li>
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-7">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczOIZCWbhrAoA9SI0ZOno71FO_7AhHNT7ZcMAzNx-pytkFfVhkXGVml1b--lTFE-jb8qnqYL_nSmoY09GOr9rUvtgtiW_7hz7D9QzVHbXZuvfXLg7Q97GEN88-d4lymf79X96kw2rFHMs0u4TFVKtMhp=w587-h350-s-no-gm?authuser=0" alt="OTTO AI 6 servo">
+                        <span>2. OTTO AI 6 servo</span>
+                    </li>
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-8">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMREeKnDIABarfeNeboHZM-YZJnkID4WSOaj7IEYdEV2jSUi5YOx6y8cswl-tI81RpOFWARJNKutt4rdO9b8kqXqyoehSebojINvT9rUCegA3vzdjZtA1gkg1Z2-LXks8Q7FzS3VFKTpnGFi2pH9m6x=w713-h713-s-no-gm?authuser=0" alt="Cún AI">
+                        <span>3. Cún AI</span>
+                    </li>
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-9">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMNrR9c2FtAbltO3eRwJTm9XGfM3TCHAOKobZHDEReG3iuTpVhFQ2ZJk3TN-jeu5Ymfa5EM1SBJnyiLNL-fJtIftUznwBXzad0mwBivbShTC82JtSD8R0dTaett4onb4WUbK-ydN5orS7hXbSaTIkyV=w750-h750-s-no-gm?authuser=0" alt="Wall-E AI">
+                        <span>4. Wall-E AI (Đang phát triển)</span>
+                    </li>
+                    <li class="category-link" data-target-tab="tab-cach-diy" data-target-id="diy-10">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczPMGLc81lmDxzgL_1jFSuk5XURNXdPYp977FN2cKENCit-K8tKnTCOfdBE4EpOaxldkpwpYo-K5uT_8NAgaGt8xCea3e3m8ip10czN6_5EO0-RQLx-Lgk7uULjX1dwwZjRlj7I3-pQiSOAyPLfmklAi=w800-h800-s-no-gm?authuser=0" alt="Eilik Emo AI">
+                        <span>5. Eilik Emo AI (Đang phát triển)</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="tab-cach-diy" class="tab-pane">
+                <h2><i class="fa-solid fa-screwdriver-wrench"></i> III. Cách DIY</h2>
+
+                <div class="diy-project" id="diy-1">
+                    <h3>1. Xiaozhi tandev</h3>
+                    <h4 class="step-heading">Bước 1: Mua linh kiện</h4>
+                    <p>Tùy theo nhu cầu mà bạn chọn option phù hợp nhé, mà mình khuyến khích các sếp mua esp32 s3 zero, có wake word bằng giọng nói mà còn nhỏ gọn nữa, còn màn hình thì sao cũng được tùy sở thích.</p>
+                    
+                    <button class="option-toggle" data-option="option1">Option 1: Dùng Esp32 n16r8 (có wakeword)</button>
+                    <div class="option-content" id="option1">
+                        <ul class="component-list">
+                            <li>Esp32 n16r8: <a href="https://s.shopee.vn/4LBDLVZ6Wm" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Màn oled 0.96”: <a href="https://s.shopee.vn/4VUdXoYTBp" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Hoặc mua màn oled 1.3”: <a href="https://s.shopee.vn/40YMwtaNCk" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Micro INMP441: <a href="https://s.shopee.vn/4Arn9CZjrn" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Loa 8ohm 1w: <a href="https://s.shopee.vn/50Qu8jWZAy" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Mạch khuếch đại âm thanh(nên mua loại bga): <a href="https://s.shopee.vn/5AkKL2Vvq1" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Pin 300mah: <a href="https://s.shopee.vn/4fo3k7Xpqw" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Mạch sạc tp4057: <a href="https://s.shopee.vn/4q7TwQXCVz" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Công tắc trượt: <a href="https://s.shopee.vn/30fpl3eBEe" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Nút nhấn: <a href="https://s.shopee.vn/3AzFxMdXth" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Hoặc cảm biến chạm: <a href="https://s.shopee.vn/2g2zMRfRuc" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Vỏ: <a href="https://s.shopee.vn/2qMPYkeoZf" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Dây hàn: <a href="https://s.shopee.vn/3fvWYHbdsq" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Jack cắm AUX 3.5(ko mua cx đc): <a href="https://s.shopee.vn/3qEwkab0Xt" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Bóng led(ko mua cx đc): <a href="https://s.shopee.vn/3LIg9fcuYo" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        </ul>
+                    </div>
+                    
+                    <button class="option-toggle" data-option="option2">Option 2: Dùng Esp32 s3 super mini (ko có wakeword)</button>
+                    <div class="option-content" id="option2">
+                         <ul class="component-list">
+                            <li>Esp32 s3 super mini: <a href="https://s.shopee.vn/2VjZAGPn4C" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Màn oled 0.96”: <a href="https://s.shopee.vn/2LQ8xxQQPB" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Hoặc mua màn oled 1.3”: <a href="https://s.shopee.vn/2B6ileR3kA" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Micro INMP441: <a href="https://s.shopee.vn/20nIZLRh59" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Loa 8ohm 1w: <a href="https://s.shopee.vn/1qTsN2SKQ8" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Mạch khuếch đại âm thanh(nên mua loại bga): <a href="https://s.shopee.vn/1gASAjSxl7" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Pin 300mah: <a href="https://s.shopee.vn/1Vr1yQTb66" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Mạch sạc tp4057: <a href="https://s.shopee.vn/1LXbm7UER5" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Công tắc trượt: <a href="https://s.shopee.vn/1BEBZoUrm4" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Nút nhấn: <a href="https://s.shopee.vn/10ulNVVV73" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Hoặc cảm biến chạm: <a href="https://s.shopee.vn/qbLBCW8S2" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Vỏ: <a href="https://s.shopee.vn/gHuytWln1" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Dây hàn: <a href="https://s.shopee.vn/VyUmaXP80" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Jack cắm AUX 3.5(ko mua cx đc): <a href="https://s.shopee.vn/Lf4aHY2Sz" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Bóng led(ko mua cx đc): <a href="https://s.shopee.vn/BLeNyYfny" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="option-toggle" data-option="option3">Option 3: Dùng Esp32 s3 zero (có wakeword)</button>
+                    <div class="option-content" id="option3">
+                         <ul class="component-list">
+                            <li>Esp32 s3 zero: <a href="https://s.shopee.vn/8V0mJOmzUg" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Màn oled 0.96”: <a href="https://s.shopee.vn/8KhM75ncpf" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Hoặc mua màn oled 1.3”: <a href="https://s.shopee.vn/8pdci0liom" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Micro INMP441: <a href="https://s.shopee.vn/8fKCVhmM9l" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Loa 8ohm 1w: <a href="https://s.shopee.vn/9AGT6ckS8s" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Mạch khuếch đại âm thanh(nên mua loại bga): <a href="https://s.shopee.vn/8zx2uJl5Tr" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Pin 300mah: <a href="https://s.shopee.vn/9UtJVEjBSy" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Mạch sạc tp4057: <a href="https://s.shopee.vn/9KZtIvjonx" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Công tắc trượt: <a href="https://s.shopee.vn/9pW9tqhun4" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Nút nhấn: <a href="https://s.shopee.vn/9fCjhXiY83" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Hoặc cảm biến chạm: <a href="https://s.shopee.vn/AA90ISge7A" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Vỏ: <a href="https://s.shopee.vn/9zpa69hHS9" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Dây hàn: <a href="https://s.shopee.vn/AUlqh4fNRG" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Jack cắm AUX 3.5(ko mua cx đc): <a href="https://s.shopee.vn/AKSQUlg0mF" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                            <li>Bóng led(ko mua cx đc): <a href="https://s.shopee.vn/5VNAjsyPaK" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        </ul>
+                    </div>
+
+                    <h4 class="step-heading">Bước 2: Hàn theo sơ đồ</h4>
+                    <div class="schematic-image" id="option1-img">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMywDTKodOSVJA8VGQ7v-VBkYjZXSRT8yrfXTyfOMaVghtyPwfttK3_cnkaAClbE__A9Bqai83eoUa9GrRWJjaMwSW-ntJ0VYL_mercEXz_JL4Y_RFiid2Gjfpl7Ax5YlZ7fsCHgWJV31zDmhfQ4TbP=w1279-h945-s-no-gm?authuser=0" alt="Sơ đồ Option 1">
+                    </div>
+                    <div class="schematic-image" id="option2-img">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP7Kt1IpwFfhaLZuX3Hzee8eZ89mMSwsAAhMpLdUbfCTwa79nlhtYLp9R-Z4T0zfCrSSAI7XoYKKnlCCFpv1eF8tidcEY5gx-RLWSyMtfqwWdCWHc8qE4W3vFss42uv05CZtz9mJ9w9fJVX9QWdA4bD=w1680-h945-s-no-gm?authuser=0" alt="Sơ đồ Option 2">
+                    </div>
+                    <div class="schematic-image" id="option3-img">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczM3kjBn_Qk0q5F0aHaC_X_6SXgKm2kCpNaax4Yye1dFQ0T-wGcUmGJ6NDyRLby2G4RpVzGlFWwZfyyEBe0U4zWUtMA-lDPx7XdbIzEGz8_uGuDg3hrzM608tAekFo7q-lebk4aAjk-rRFQzGzLpxZeD=w1680-h945-s-no-gm?authuser=0" alt="Sơ đồ Option 3">
+                    </div>
+
+                    <h4 class="step-heading">Bước 3: Nạp code</h4>
+                    <p>Truy cập: <a href="https://tandev.click/" target="_blank">https://tandev.click/</a></p>
+                    
+                    <h4 class="step-heading">Bước 4: Thiết lập xiaozhi</h4>
+                </div>
+
+                <div class="diy-project" id="diy-2">
+                    <h3>2. Combo DIY mạch tím huyền thoại</h3>
+                    <h4 class="step-heading">Bước 1: Mua linh kiện</h4>
+                    <ul class="component-list">
+                        <li>Bộ mạch esp32+loa+màn: <a href="https://s.shopee.vn/5VNAqsLpjM" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Vỏ in 3d: <a href="https://s.shopee.vn/5L3keZMT4L" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Pin 800mah(803035): <a href="https://s.shopee.vn/5q01FUKZ3S" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Công tắc trượt: <a href="https://s.shopee.vn/5fgb3BLCOR" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch sạc tp4057: <a href="https://s.shopee.vn/6Acre6JINY" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Cảm biến chạm: <a href="https://s.shopee.vn/60JRRnJviX" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Dây hàn: <a href="https://s.shopee.vn/6VFi2iI1he" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                    </ul>
+                    
+                    <h4 class="step-heading">Bước 2: Hàn theo sơ đồ</h4>
+                    <img src="https://vi3d.io.vn/assets/D3.png" alt="Sơ đồ mạch tím" style="max-width:100%; border-radius: 8px;">
+                    
+                    <h4 class="step-heading">Bước 3: Nạp code</h4>
+                    <p>Truy cập: <a href="https://vi3d.io.vn/" target="_blank">https://vi3d.io.vn/</a> hoặc <a href="https://heylily.net/esp32/" target="_blank">https://heylily.net/esp32/</a></p>
+                    
+                    <h4 class="step-heading">Bước 4: Thiết lập xiaozhi</h4>
+                </div>
+                
+                <div class="diy-project" id="diy-3">
+                    <h3>3. Xiaozhi box màn màu</h3>
+                     <h4 class="step-heading">Bước 1: Mua linh kiện</h4>
+                    <ul class="component-list">
+                        <li>ESP32-S3 N8R2: <a href="https://s.shopee.vn/5VNAk2yheb" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hoặc ESP32-S3 N16R8: <a href="https://s.shopee.vn/5fgawLy4Je" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Màn hình TFT LCD(kích thước nào cũng được): <a href="https://s.shopee.vn/5q018exQyh" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch khuếch đại âm thanh: <a href="https://s.shopee.vn/60JRKxwndk" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Module INMP441: <a href="https://s.shopee.vn/6AcrXGwAIn" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Loa 4ohm 3w: <a href="https://s.shopee.vn/6KwHjZvWxq" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Pin 500mah: <a href="https://s.shopee.vn/6VFhvsutct" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Nút nhấn: <a href="https://s.shopee.vn/6fZ88BuGHw" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hoặc dùng cảm biến chạm: <a href="https://s.shopee.vn/6psYKUtcwz" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Vỏ: <a href="https://s.shopee.vn/70ByWnszc2" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                    </ul>
+                    
+                    <h4 class="step-heading">Bước 2: Hàn theo sơ đồ</h4>
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczP7D6po9HPwZUQS2Wiui3dH882O6c8ovPAEU-mtQMu6RJNBZSLyz1MbYmeXsUb7psUA1HqcDr2r7X2MszYZUnraSOXQknwEIp7p3Wp2q948lLnwSdWVbcaYeDCzHaj3b2nscGNsgqS_eHooqOa_ZZPc=w827-h747-s-no-gm?authuser=0" alt="Sơ đồ box màn màu" style="max-width:100%; border-radius: 8px;">
+                    
+                    <h4 class="step-heading">Bước 3: Nạp code</h4>
+                    <p>Truy cập: <a href="https://www.hs2t.com/p/esp-web-tools.html" target="_blank">https://www.hs2t.com/p/esp-web-tools.html</a></p>
+                    
+                    <h4 class="step-heading">Bước 4: Thiết lập xiaozhi</h4>
+                </div>
+
+                <div class="diy-project" id="diy-4">
+                    <h3>4. Xiaozhi kết hợp Dasai Mochi</h3>
+                    <h4 class="step-heading">Bước 1: Mua linh kiện</h4>
+                    <p>Tùy theo nhu cầu mà bạn chọn linh kiện phù hợp nhé...</p>
+                    <ul class="component-list">
+                        <li>Esp32 s3 super mini: <a href="https://s.shopee.vn/12EFjuZFc" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hoặc esp32 c3 super mini: <a href="https://s.shopee.vn/BLeS2tvuf" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Màn oled 0.96”: <a href="https://s.shopee.vn/Lf4eLtIZi" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hoặc mua màn oled 0.91”: <a href="https://s.shopee.vn/VyUqesfEl" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hoặc mua màn tft 0.96” đẹp hơn: <a href="https://s.shopee.vn/20nIdPmxC4" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Micro INMP441: <a href="https://s.shopee.vn/2B6ipimJr7" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Loa 8ohm 1w: <a href="https://s.shopee.vn/2LQ921lgWA" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch khuếch đại âm thanh(nên mua loại bga): <a href="https://s.shopee.vn/2VjZEKl3BD" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Pin 300mah: <a href="https://s.shopee.vn/1LXbqBpUY0" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch sạc tp4057: <a href="https://s.shopee.vn/1Vr22UorD3" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Công tắc trượt: <a href="https://s.shopee.vn/1gASEnoDs6" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Nút nhấn(mua 2 cái): <a href="https://s.shopee.vn/1qTsR6naX9" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hoặc cảm biến chạm(mua 2 cái): <a href="https://s.shopee.vn/3LIgDrhsUS" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Vỏ: <a href="https://s.shopee.vn/3Vc6QAhF9V" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Dây hàn: <a href="https://s.shopee.vn/3fvWcTgboY" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                    </ul>
+                    
+                    <h4 class="step-heading">Bước 2: Hàn theo sơ đồ trên web</h4>
+                    <p>Xem tại: <a href="https://xiaozhi.vn/" target="_blank">https://xiaozhi.vn/</a></p>
+                    
+                    <h4 class="step-heading">Bước 3: Nạp code</h4>
+                    <p>Truy cập: <a href="https://xiaozhi.vn/" target="_blank">https://xiaozhi.vn/</a></p>
+                    
+                    <h4 class="step-heading">Bước 4: Thiết lập xiaozhi</h4>
+                </div>
+
+                <div class="diy-project" id="diy-5">
+                    <h3>5. Xiaozhi cắm loa ngoài (Basic-Ko màn)</h3>
+                     <h4 class="step-heading">Bước 1: Mua linh kiện</h4>
+                    <ul class="component-list">
+                        <li>ESP32 c3/s3 super mini: <a href="https://s.shopee.vn/6KwHr4X6Ty" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Vỏ in 3d: <a href="https://s.shopee.vn/6VFi3NWT91" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mic inmp441: <a href="https://s.shopee.vn/5L3kfEauVo" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch PCM5120: <a href="https://s.shopee.vn/5VNArXaHAr" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Nút nhấn: <a href="https://s.shopee.vn/5fgb3qZdpu" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hoặc cảm biến chạm: <a href="https://s.shopee.vn/5q01G9Z0Ux" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Dây hàn: <a href="https://s.shopee.vn/7Kop2uTISG" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                    </ul>
+                    
+                    <h4 class="step-heading">Bước 2: Hàn theo sơ đồ</h4>
+                    <img src="https://xiaozhi.vn/data/sodo/c3mini-aux-dia.jpg" alt="Sơ đồ loa ngoài" style="max-width:100%; border-radius: 8px;">
+                    
+                    <h4 class="step-heading">Bước 3: Nạp code</h4>
+                    <p>Truy cập: <a href="https://xiaozhi.vn/" target="_blank">https://xiaozhi.vn/</a></p>
+                    
+                    <h4 class="step-heading">Bước 4: Thiết lập xiaozhi</h4>
+                </div>
+
+                <div class="diy-project" id="diy-6">
+                    <h3>6. OTTO AI 4 servo</h3>
+                     <h4 class="step-heading">Bước 1: Mua linh kiện</h4>
+                    <ul class="component-list">
+                        <li>Vỏ 3D: <a href="https://s.shopee.vn/4VUdgOvuXS" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>esp32 S3 N16R8: <a href="https://s.shopee.vn/4LBDU5wXsR" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>mic: <a href="https://s.shopee.vn/4q7U50udrY" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Khuyếch đại max98357: <a href="https://s.shopee.vn/4fo3shvHCX" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hạ áp 3.3v asm1117: <a href="https://s.shopee.vn/5AkKTctNBe" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Tăng áp MT3608: <a href="https://s.shopee.vn/50QuHJu0Wd" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch sạc và tăng áp TC4056: <a href="https://s.shopee.vn/2qMPhL2FvE" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>LCD 1.54” ST7789: <a href="https://s.shopee.vn/2g2zV22tGD" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Loa speaker: <a href="https://s.shopee.vn/3AzG5x0zFK" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Sạc tp4056: <a href="https://s.shopee.vn/30fpte1caJ" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Pin Lipo: <a href="https://s.shopee.vn/3Vc6UYziZQ" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>servo MG90s 180độ: <a href="https://s.shopee.vn/3LIgIG0LuP" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>servo MG90s 180độ: <a href="https://s.shopee.vn/3qEwtAyRtW" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Board mạch đục lỗ PCB: <a href="https://s.shopee.vn/3fvWgrz5EV" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>cổng sạc type c: <a href="https://s.shopee.vn/6fZ8GNnf96" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Công tắc: <a href="https://s.shopee.vn/6psYSgn1o9" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>điện trở: <a href="https://s.shopee.vn/70ByezmOTC" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>tụ gốm: <a href="https://s.shopee.vn/7AVOrIll8F" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Ốc vít M2x6 : <a href="https://s.shopee.vn/7Kop3bl7nI" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>đầu nối đực cái: <a href="https://s.shopee.vn/7V8FFukUSL" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                    </ul>
+                    
+                    <h4 class="step-heading">Bước 2: Hàn theo sơ đồ</h4>
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczPSX6ojYMTL1Jn1vEeQVcUpbqQWv7CQpawaJ-s4uQyFdyy6OSnwMs0oaMtRN4FoGSZovHvPQZG0gKqgv4Gd7fGKa3xUfRvvpCYaiyx46Yge9CDAU9ynjC4KMUDlz88F8ti6-ZaYimewNzpNsp6VHw2T=w732-h945-s-no-gm?authuser=0" alt="Sơ đồ OTTO 4 servo" style="max-width:100%; border-radius: 8px;">
+                    
+                    <h4 class="step-heading">Bước 3: Xem hướng dẫn và nạp code</h4>
+                    <div class="youtube-embed">
+                        <iframe src="https://www.youtube.com/embed/dWcRow4sTFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                    <h4 class="step-heading">Bước 4: Thiết lập xiaozhi</h4>
+                </div>
+
+                <div class="diy-project" id="diy-7">
+                    <h3>7. OTTO AI 6 servo</h3>
+                     <h4 class="step-heading">Bước 1: Mua linh kiện</h4>
+                    <ul class="component-list">
+                        <li>Mạch Esp32S3: <a href="https://s.shopee.vn/5AkKJHWRj1" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Màn TFT 1.54”: <a href="https://s.shopee.vn/40YMv8at5o" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch khuếch đại âm thanh MAX98357: <a href="https://s.shopee.vn/4Arn7RaFkr" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Loa 3w: <a href="https://s.shopee.vn/4LBDJkZcPu" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Module microphone inmp441: <a href="https://s.shopee.vn/4VUdW3Yz4x" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch tăng áp 5v5A XL6019: <a href="https://s.shopee.vn/3LIg7udQRk" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch sạc tp4056: <a href="https://s.shopee.vn/3Vc6KDcn6n" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>6 servo: <a href="https://s.shopee.vn/3fvWWWc9lq" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Pin lion: <a href="https://s.shopee.vn/3qEwipbWQt" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hoặc pin lipo: <a href="https://s.shopee.vn/2g2zKgfxng" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Công tắc trượt: <a href="https://s.shopee.vn/2qMPWzfKSj" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>PCB: <a href="https://s.shopee.vn/30fpjIeh7m" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Vỏ otto: <a href="https://s.shopee.vn/3AzFvbe3mp" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Ốc m2.6: <a href="https://s.shopee.vn/20nIXSiV9c" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                    </ul>
+                    
+                    <h4 class="step-heading">Bước 2: Hàn theo sơ đồ</h4>
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczN3QBiqtBqQBPxkv8LivfgjF_lN-2NE1g6yZGY6g954saMO4dpYDQyCGh1O_jZNk6WjUlcysK6dKtA05WNRek0SvGG5tUk28ZcdHS2KJ1lP9cB9a9gnSlZV1shyjmd7lQM22cTSSx1s0Huxn355B-ev=w1224-h807-s-no-gm?authuser=0" alt="Sơ đồ OTTO 6 servo" style="max-width:100%; border-radius: 8px;">
+                    
+                    <h4 class="step-heading">Bước 3: Xem hướng dẫn và nạp code</h4>
+                    <div class="youtube-embed">
+                        <iframe src="https://www.youtube.com/embed/dWcRow4sTFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                    <h4 class="step-heading">Bước 4: Thiết lập xiaozhi</h4>
+                </div>
+                
+                <div class="diy-project" id="diy-8">
+                    <h3>8. Cún AI</h3>
+                     <h4 class="step-heading">Bước 1: Mua linh kiện</h4>
+                    <ul class="component-list">
+                        <li>Vỏ 3D: <a href="https://s.shopee.vn/8fKCeeVVCK" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>esp32 S3 N16R8: <a href="https://s.shopee.vn/8pdcqxUrrN" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>mic: <a href="https://s.shopee.vn/8zx33GUEWQ" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Khuyếch đại max98357: <a href="https://s.shopee.vn/9AGTFZTbBT" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Hạ áp 3.3v asm1117: <a href="https://s.shopee.vn/804VrQY2YG" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Tăng áp MT3608: <a href="https://s.shopee.vn/8ANw3jXPDJ" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Mạch sạc và tăng áp TC4056: <a href="https://s.shopee.vn/8KhMG2WlsM" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>LCD 1.54” ST7789: <a href="https://s.shopee.vn/8V0mSLW8XP" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Loa speaker: <a href="https://s.shopee.vn/9zpaF6QQUi" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Sạc tp4056: <a href="https://s.shopee.vn/AA90RPPn9l" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>pin 18650: <a href="https://s.shopee.vn/AKSQdiP9oo" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>hoặc Pin Lipo: <a href="https://s.shopee.vn/AUlqq1OWTr" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>servo MG90s 180độ: <a href="https://s.shopee.vn/9KZtRsSxqe" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>hoặc servo MG90s 180độ: <a href="https://s.shopee.vn/9UtJeBSKVh" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Board mạch đục lỗ PCB: <a href="https://s.shopee.vn/9fCjqURhAk" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>cổng sạc type c: <a href="https://s.shopee.vn/9pWA2nR3pn" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Công tắc: <a href="https://s.shopee.vn/60JRTkfec4" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>điện trở: <a href="https://s.shopee.vn/6Acrg3f1H7" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>tụ gốm: <a href="https://s.shopee.vn/6KwHsMeNwA" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>Ốc vít M2x6 : <a href="https://s.shopee.vn/6VFi4fdkbD" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                        <li>đầu nối đực cái: <a href="https://s.shopee.vn/5L3kgWiBy0" target="_blank"><img src="https://placehold.co/40x40?text=SP" class="shopee-preview" alt="SP">Link Shopee</a></li>
+                    </ul>
+                    
+                    <h4 class="step-heading">Bước 2: Hàn theo sơ đồ</h4>
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczPB22oi27dk6IY6FHhN4nkC4c-pLTEgyctDjikYgcbeXu06W7yVifmCJGnrmhvBT18yLVJubz7mRMyVLLWKe0VRMw1dc0j-7cwhod0qRbURw2VJ-4dB2egoEKR6p6DA3JiIauxOuQMyMbi5YFNQPrZp=w732-h945-s-no-gm?authuser=0" alt="Sơ đồ Cún AI" style="max-width:100%; border-radius: 8px;">
+                    
+                    <h4 class="step-heading">Bước 3: Xem hướng dẫn và nạp code</h4>
+                    <div class="youtube-embed">
+                        <iframe src="https://www.youtube.com/embed/iVBPPtowb7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                    <h4 class="step-heading">Bước 4: Thiết lập xiaozhi</h4>
+                </div>
+                
+                <div class="diy-project" id="diy-9">
+                     <h3>4. Wall-E AI</h3>
+                     <p>Đang phát triển...</p>
+                </div>
+                <div class="diy-project" id="diy-10">
+                     <h3>5. Eilik Emo AI</h3>
+                     <p>Đang phát triển...</p>
+                </div>
+
+            </section>
+
+            <section id="tab-san-pham-san" class="tab-pane">
+                <h2><i class="fa-solid fa-box-open"></i> IV. Sản phẩm sẵn</h2>
+                
+                <h3><i class="fa-solid fa-store"></i> Shop VN</h3>
+                <ul class="shop-list">
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mfktnlnoxwqxe7.webp" alt="Shop Icon"> <span>QQ Shop</span> <a href="https://s.shopee.vn/1BEBYvZxwL" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mg9higilxdlb2d.webp" alt="Shop Icon"> <span>HoangDinhViet2111</span> <a href="https://s.shopee.vn/gHuy0brxG" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mceadz26aloy8b.webp" alt="Shop Icon"> <span>OTTO AI</span> <a href="https://s.shopee.vn/qbLAJbEcJ" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134207-820l4-me9y8eaj9jwjaf.webp" alt="Shop Icon"> <span>Loa AI</span> <a href="https://s.shopee.vn/1gAS9qY3vU" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mdtobkg3qjzgcd.webp" alt="Shop Icon"> <span>TechVibe Home</span> <a href="https://s.shopee.vn/1qTsM9XQaX" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mekx1ygxvthe3e.webp" alt="Shop Icon"> <span></span> <a href="https://s.shopee.vn/1LXblEZKbS" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/sg-11134201-824gn-meawzmxvsgznda.webp" alt="Shop Icon"> <span></span> <a href="https://s.shopee.vn/1Vr1xXYhGV" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mg7zbf8uliq12a.webp" alt="Shop Icon"> <span></span> <a href="https://s.shopee.vn/2LQ8x4VWZg" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134201-7ras8-mdm7kh4dh6md60.webp" alt="Shop Icon"> <span></span> <a href="https://s.shopee.vn/2VjZ9NUtEj" target="_blank" class="btn">Mua ngay</a></li>
+                </ul>
+
+                <h3><i class="fa-solid fa-globe"></i> Shop Quốc Tế</h3>
+                 <ul class="shop-list">
+                    <li><img src="https://down-vn.img.susercontent.com/file/cn-11134207-820l4-mg4mq3xg8ky69b.webp" alt="Shop Icon"> <span>Mạch tím huyền thoại</span> <a href="https://s.shopee.vn/10ulN1zpxL" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/sg-11134201-824in-mf1yp8dniy2z44.webp" alt="Shop Icon"> <span>Box 1.54</span> <a href="https://s.shopee.vn/BLeNV30eC" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/sg-11134201-7repb-m8tzw79zw2ftaf.webp" alt="Shop Icon"> <span>Xiaozhi màn cảm ứng amoled</span> <a href="https://s.shopee.vn/12EBC3dzB" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/sg-11134201-7rdys-mc0bpjpjoq0w6b.webp" alt="Shop Icon"> <span>Xiaozhi màn tròn 1.28”</span> <a href="https://s.shopee.vn/VyUm71jyI" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/sg-11134201-7rdx5-mcbpt3tt84c2b8.webp" alt="Shop Icon"> <span>Xiaozhi 4g</span> <a href="https://s.shopee.vn/Lf4Zo2NJH" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/vn-11134201-7ras8-mdma504cym2757.webp" alt="Shop Icon"> <span></span> <a href="https://s.shopee.vn/2B6ilAvOae" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/sg-11134201-7rdwg-mcv3vcc53rcw86.webp" alt="Shop Icon"> <span></span> <a href="https://s.shopee.vn/20nIYrw1vd" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/sg-11134201-824ik-mflxsg7zltlae8.webp" alt="Shop Icon"> <span></span> <a href="https://s.shopee.vn/2VjZ9mu7uk" target="_blank" class="btn">Mua ngay</a></li>
+                    <li><img src="https://down-vn.img.susercontent.com/file/sg-11134201-8258n-mexprco5b95265.webp" alt="Shop Icon"> <span>Xiaozhi có thẻ nhớ</span> <a href="https://s.shopee.vn/2LQ8xTulFj" target="_blank" class="btn">Mua ngay</a></li>
+                 </ul>
+            </section>
+
+            <section id="tab-fw-so-do" class="tab-pane">
+                <h2><i class="fa-solid fa-microchip"></i> V. Tổng hợp FW&Sơ đồ</h2>
+                <ul class="fw-list">
+                    <li class="fw-item" id="fw-tandev">
+                        <span class="fw-item-name">FW tandev</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://tandev.click/" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                            <button class="btn btn-secondary schematic-btn" 
+                                data-fw-name="FW tandev"
+                                data-images='["https://placehold.co/600x400?text=Tandev+Sơ+đồ+1", "https://placehold.co/600x400?text=Tandev+Sơ+đồ+2", "https://placehold.co/600x400?text=Tandev+Sơ+đồ+3"]'>
+                                <i class="fa-solid fa-image"></i> Sơ đồ (3 ảnh)
+                            </button>
+                        </div>
+                    </li>
+                    <li class="fw-item" id="fw-vi3d">
+                        <span class="fw-item-name">FW VI3D</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://vi3d.io.vn/firmware-ai" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                            <button class="btn btn-secondary schematic-btn" 
+                                data-fw-name="FW VI3D"
+                                data-images='["https://placehold.co/600x400?text=VI3D+Sơ+đồ+1"]'>
+                                <i class="fa-solid fa-image"></i> Sơ đồ (1 ảnh)
+                            </button>
+                        </div>
+                    </li>
+                    <li class="fw-item" id="fw-xiaozhi-vn">
+                        <span class="fw-item-name">FW Xiaozhi Sever VN</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://xiaozhi.vn/" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                            <button class="btn btn-secondary schematic-btn" 
+                                data-fw-name="FW Xiaozhi Sever VN"
+                                data-images='["https://placehold.co/600x400?text=XiaozhiVN+1", "https://placehold.co/600x400?text=XiaozhiVN+2", "https://placehold.co/600x400?text=XiaozhiVN+3", "https://placehold.co/600x400?text=XiaozhiVN+4"]'>
+                                <i class="fa-solid fa-image"></i> Sơ đồ (4 ảnh)
+                            </button>
+                        </div>
+                    </li>
+                    <li class="fw-item" id="fw-tong-hop">
+                        <span class="fw-item-name">FW Tổng hợp sản phẩm sẵn (Mạch tím, Box 1.54”,...)</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://heylily.net/esp32/" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                        </div>
+                    </li>
+                     <li class="fw-item" id="fw-man-mau">
+                        <span class="fw-item-name">FW Màn Màu</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://www.hs2t.com/p/esp-web-tools.html" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                        </div>
+                    </li>
+                    <li class="fw-item" id="fw-otto-4">
+                        <span class="fw-item-name">FW OTTO AI 4 servo</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://drive.google.com/file/d/1NrGC7Gav59wggBw-DG2cDmftPd_ek4Uu/view" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                             <button class="btn btn-secondary schematic-btn" 
+                                data-fw-name="FW OTTO AI 4 servo"
+                                data-images='["https://placehold.co/600x400?text=OTTO+4+servo+Sơ+đồ"]'>
+                                <i class="fa-solid fa-image"></i> Sơ đồ (1 ảnh)
+                            </button>
+                        </div>
+                    </li>
+                     <li class="fw-item" id="fw-otto-6">
+                        <span class="fw-item-name">FW OTTO AI 6 servo</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://drive.google.com/drive/folders/1fW9KUnRlUvSOVJvH5W2zqoLgaw7v37-A" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                             <button class="btn btn-secondary schematic-btn" 
+                                data-fw-name="FW OTTO AI 6 servo"
+                                data-images='["https://placehold.co/600x400?text=OTTO+6+servo+Sơ+đồ"]'>
+                                <i class="fa-solid fa-image"></i> Sơ đồ (1 ảnh)
+                            </button>
+                        </div>
+                    </li>
+                    <li class="fw-item" id="fw-cun-ai">
+                        <span class="fw-item-name">FW Cún AI</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://drive.google.com/file/d/1Rj54frvEbSdF1tTAwNoJspDp9Of3Rxco/view?usp=sharing" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                             <button class="btn btn-secondary schematic-btn" 
+                                data-fw-name="FW Cún AI"
+                                data-images='["https://placehold.co/600x400?text=Cún+AI+Sơ+đồ"]'>
+                                <i class="fa-solid fa-image"></i> Sơ đồ (1 ảnh)
+                            </button>
+                        </div>
+                    </li>
+                    <li class="fw-item" id="fw-ai-box">
+                        <span class="fw-item-name">FW AI BOX PLUS</span>
+                        <div class="fw-item-buttons">
+                            <a href="https://www.ai-box-plus.com/" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Truy cập</a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="tab-nang-cao" class="tab-pane">
+                <h2><i class="fa-solid fa-graduation-cap"></i> VI. Kiến thức nâng cao</h2>
+                <p>Dưới đây là một số chia sẽ của mình, mọi người có thể tham khảo qua nha:</p>
+                <ul class="advanced-list">
+                    <li><i class="fa-brands fa-github"></i> Vọc từ repo xiaozhi gốc trên github: <a href="https://github.com/78/xiaozhi-esp32" target="_blank">Link Github</a></li>
+                    <li><i class="fa-solid fa-server"></i> Cách tích hợp HASS (build mcp sever): <a href="https://dienthongminhesmart.com/lap-trinh-esp32/chatbot-xiaozhi-mcp/" target="_blank">Xem hướng dẫn</a></li>
+                    <li><i class="fa-solid fa-brain"></i> Cách build riêng 1 sever AI tương tự xiaozhi: <a href="https://docs.google.com/document/d/1-USAuqLLwhemlnfIsHp-SwQ5_ZhXj37RLIAVvICMCho/edit?usp=sharing" target="_blank">Xem tài liệu</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2025 By Nhân Nguyễn. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/nhandusky/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@DuskyMacloded" target="_blank" title="Youtube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@duskymacloded" target="_blank" title="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <!-- Nút Home nổi -->
+    <div id="floating-home-btn" class="floating-home-btn">
+        <i class="fa-solid fa-house"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. XỬ LÝ MODAL (THÔNG BÁO & SƠ ĐỒ) ---
+            const notificationModal = document.getElementById('notification-modal');
+            const closeNotificationBtn = document.getElementById('close-notification');
+            const schematicModal = document.getElementById('schematic-modal');
+            const closeSchematicBtn = document.getElementById('close-schematic');
+            const schematicModalBody = document.getElementById('schematic-modal-body');
+            const schematicModalTitle = document.getElementById('schematic-modal-title');
+
+            // Hiển thị thông báo khi tải trang
+            notificationModal.style.display = 'flex';
+
+            // Đóng modal
+            closeNotificationBtn.onclick = () => notificationModal.style.display = 'none';
+            closeSchematicBtn.onclick = () => schematicModal.style.display = 'none';
+
+            // Đóng modal khi nhấp ra ngoài
+            window.onclick = (event) => {
+                if (event.target == notificationModal) {
+                    notificationModal.style.display = 'none';
+                }
+                if (event.target == schematicModal) {
+                    schematicModal.style.display = 'none';
+                }
+                // Đóng kết quả tìm kiếm khi nhấp ra ngoài
+                if (!event.target.closest('#search-container')) {
+                    searchResults.style.display = 'none';
+                }
+            };
+            
+            // --- 2. HỆ THỐNG TAB ---
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            const homeCards = document.querySelectorAll('.home-card');
+
+            function activateTab(targetId) {
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+
+                document.getElementById(targetId).classList.add('active');
+                document.querySelector(`.tab-btn[data-target="${targetId}"]`).classList.add('active');
+                window.scrollTo(0, 0);
+            }
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activateTab(btn.dataset.target);
+                });
+            });
+
+            // Liên kết từ Home Card đến Tab
+            homeCards.forEach(card => {
+                card.addEventListener('click', () => {
+                     activateTab(card.dataset.target);
+                });
+            });
+
+            // --- 3. LIÊN KẾT TAB "PHÂN LOẠI" -> "CÁCH DIY" ---
+            const categoryLinks = document.querySelectorAll('.category-link');
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetTabId = link.dataset.targetTab;
+                    const targetContentId = link.dataset.targetId;
+
+                    // Chuyển tab
+                    activateTab(targetTabId);
+
+                    // Cuộn đến nội dung và highlight
+                    const targetElement = document.getElementById(targetContentId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Thêm hiệu ứng highlight
+                        targetElement.classList.add('highlight-animation');
+                        setTimeout(() => {
+                            targetElement.classList.remove('highlight-animation');
+                        }, 2000);
+                    }
+                });
+            });
+
+            // --- 4. TAB "CÁCH DIY" - MỞ/ĐÓNG OPTION ---
+            const optionToggles = document.querySelectorAll('.option-toggle');
+            optionToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const optionId = toggle.dataset.option;
+                    const project = toggle.closest('.diy-project');
+                    const contentToShow = project.querySelector(`#${optionId}`);
+                    const imageToShow = project.querySelector(`#${optionId}-img`);
+                    
+                    const isActive = toggle.classList.contains('active');
+
+                    // Đóng tất cả các option khác trong cùng project
+                    project.querySelectorAll('.option-toggle').forEach(t => t.classList.remove('active'));
+                    project.querySelectorAll('.option-content').forEach(c => c.classList.remove('active'));
+                    project.querySelectorAll('.schematic-image').forEach(i => i.classList.remove('active'));
+                    
+                    // Nếu click vào cái đang đóng, thì mở nó ra
+                    if (!isActive) {
+                        toggle.classList.add('active');
+                        if (contentToShow) contentToShow.classList.add('active');
+                        if (imageToShow) imageToShow.classList.add('active');
+                    }
+                    // Nếu click vào cái đang mở, nó sẽ đóng (vì đã bị remove 'active' ở trên)
+                });
+            });
+
+            // --- 5. TAB "FW & SƠ ĐỒ" - MODAL HIỂN THỊ SƠ ĐỒ ---
+            document.querySelectorAll('.schematic-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const fwName = btn.dataset.fwName;
+                    const images = JSON.parse(btn.dataset.images);
+                    
+                    schematicModalTitle.textContent = `Sơ đồ: ${fwName}`;
+                    schematicModalBody.innerHTML = ''; // Xóa nội dung cũ
+
+                    images.forEach(imgUrl => {
+                        const item = document.createElement('div');
+                        item.className = 'schematic-item';
+                        item.innerHTML = `
+                            <img src="${imgUrl}" alt="Sơ đồ ${fwName}">
+                            <a href="${imgUrl}" download="${fwName}-SoDo.png" class="btn btn-secondary">
+                                <i class="fa-solid fa-download"></i> Tải ảnh
+                            </a>
+                        `;
+                        schematicModalBody.appendChild(item);
+                    });
+
+                    schematicModal.style.display = 'flex';
+                });
+            });
+
+            // --- 6. CHỨC NĂNG TÌM KIẾM ---
+            const searchBar = document.getElementById('search-bar');
+            const searchResults = document.getElementById('search-results');
+            let searchIndex = [];
+
+            function buildSearchIndex() {
+                const searchableTabs = ['#tab-phan-loai', '#tab-cach-diy', '#tab-san-pham-san', '#tab-fw-so-do'];
+                let idCounter = 0;
+
+                searchableTabs.forEach(tabSelector => {
+                    const tabPane = document.querySelector(tabSelector);
+                    const tabId = tabPane.id;
+                    
+                    // Tìm các mục có thể tìm kiếm (h3, li, .diy-project, .fw-item)
+                    tabPane.querySelectorAll('h3, li, .diy-project, .fw-item').forEach(item => {
+                        const text = item.textContent.toLowerCase().trim().replace(/\s+/g, ' ');
+                        let id = item.id;
+                        if (!id) {
+                            id = `search-target-${idCounter++}`;
+                            item.id = id; // Gán ID cho phần tử để cuộn tới
+                        }
+                        
+                        // Tránh thêm các mục rỗng
+                        if (text) {
+                             searchIndex.push({
+                                text: text,
+                                id: id,
+                                tabId: tabId
+                            });
+                        }
+                    });
+                });
+                console.log("Search index built:", searchIndex.length, "items");
+            }
+            
+            buildSearchIndex();
+
+            searchBar.addEventListener('input', () => {
+                const query = searchBar.value.toLowerCase();
+                if (query.length < 2) {
+                    searchResults.style.display = 'none';
+                    return;
+                }
+                
+                // Chuẩn hóa query (bỏ dấu tiếng Việt)
+                const normalizedQuery = query.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                const results = searchIndex.filter(item => {
+                    const normalizedText = item.text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                    return normalizedText.includes(normalizedQuery);
+                }).slice(0, 10); // Giới hạn 10 kết quả
+
+                searchResults.innerHTML = '';
+                if (results.length > 0) {
+                    results.forEach(res => {
+                        const li = document.createElement('li');
+                        // Hiển thị 80 ký tự
+                        let displayText = res.text.length > 80 ? res.text.substring(0, 80) + '...' : res.text;
+                        li.textContent = displayText;
+                        li.dataset.targetId = res.id;
+                        li.dataset.targetTab = res.tabId;
+                        
+                        li.addEventListener('click', () => {
+                            // Chuyển tab
+                            activateTab(res.tabId);
+                            
+                            // Cuộn tới
+                            const targetElement = document.getElementById(res.id);
+                            if (targetElement) {
+                                targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                // Thêm hiệu ứng highlight
+                                targetElement.classList.add('highlight-animation');
+                                setTimeout(() => {
+                                    targetElement.classList.remove('highlight-animation');
+                                }, 2000);
+                            }
+                            
+                            // Dọn dẹp
+                            searchResults.style.display = 'none';
+                            searchBar.value = '';
+                        });
+                        
+                        searchResults.appendChild(li);
+                    });
+                    searchResults.style.display = 'block';
+                } else {
+                    searchResults.style.display = 'none';
+                }
+            });
+
+            // --- 7. NÚT HOME NỔI ---
+            const floatingHomeBtn = document.getElementById('floating-home-btn');
+            floatingHomeBtn.addEventListener('click', () => {
+                activateTab('tab-trang-chu');
+            });
+
+        });
+    </script>
+
+</body>
+</html>
